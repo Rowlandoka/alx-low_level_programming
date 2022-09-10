@@ -7,10 +7,18 @@
  */
 int main(void)
 {
-	char a;
+	int i;
 
-	for (a = 'z'; a >= 'a'; a--)
-		putchar(a);
+	for (i = 10; i < 20; i++)
+	{
+		putchar((i % 10) + '0');
+		if (i != 19)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+
+	}
 	putchar('\n');
 	return (0);
 }
