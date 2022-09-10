@@ -2,25 +2,20 @@
 /**
  * main - Entry point
  *
- * Return: always return 0
+ * Return; always return 0
  *
  */
 int main(void)
 {
-	unsigned char a '0';
-	int i;
+	int num;
+	char letters;
 
-	for (i = 10; i < 20; i++)
-	{
-		putchar(a);
-		a++;
-	}
-	a = '1';
-	for (i = 0; i < 6; i++)
-	{
-		putchar('0' + a);
-		a++;
-	}
+	for (num = 0; num < 10; num++)
+		putchar((num % 10) + '0');
+
+	for (letter = 'a'; letter <= 'f'; letter++)
+		putchar(letter);
+
 	putchar('\n');
 	return (0);
-}	
+}
