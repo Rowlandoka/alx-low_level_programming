@@ -7,10 +7,10 @@
  */
 int main(void)
 {
-	unsigned char a = '0';
+	unsigned char a '0';
 	int i;
 
-	for (i = 0; i < 10; i++)
+	for (i = 10; i < 20; i++)
 	{
 		putchar(a);
 		a++;
