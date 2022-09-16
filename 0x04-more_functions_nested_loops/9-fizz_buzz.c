@@ -26,7 +26,7 @@ int main(void)
 		}
 		else
 		{
-			printf("%u\n", i);
+			printf("%d\n", i);
 		}
 	}
 
