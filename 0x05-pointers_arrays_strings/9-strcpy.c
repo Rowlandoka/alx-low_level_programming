@@ -8,7 +8,7 @@
  *
  * Return: a character value
  */
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *dest, const char *src)
 {
 	int index = 0;
 
@@ -17,6 +17,5 @@ char *_strcpy(char *dest, char *src)
 		dest[index] = src[index];
 		index++;
 	}
-
-	return (dest);
+	return(dest);
 }
