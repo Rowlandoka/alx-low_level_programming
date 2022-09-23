@@ -1,38 +1,35 @@
 #include "main.h"
-
-/**
-* _indexOf - returns boolean if special character
-* @a: character to return
-* Return: true or false
-*/
-int _indexOf(char a)
-{
-	int i;
-	char capArr[13] = {'\n', '\t', ' ', '.', ',', ';', ',', '!', '?', '(',
-	'(', '{', '}'};
-
-	for (i = 0; i < 13; i++)
-	{
-		if (capArr[i] == a)
-			return (1);
-	}
-	return (0);
-}
 /**
 * cap_string - capitalizes the string
 * @s: string
 * Return: the string capitalized
 */
-char *cap_string(char *s)
+char *cap_string(char *str)
 {
-	int i;
+	int index = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (str[index])
 	{
-		if (_indexOf(s[i]))
-			continue;
-		if (s[i] >= 'a' && s[i] <= 'z' && (_indexOf(s[i - 1] || i == 0))
-			s[i] = s[i] - 32;
+		while (!(str[index] >= 'a' && str[index] <= 'z'))
+			index++;
+
+		if (str[index - 1] == ' ' ||
+		    str[index - 1] == '\t' ||
+		    str[index - 1] == '\n' ||
+		    str[index - 1] == ',' ||
+		    str[index - 1] == ';' ||
+		    str[index - 1] == '.' ||
+		    str[index - 1] == '!' ||
+		    str[index - 1] == '?' ||
+		    str[index - 1] == '"' ||
+		    str[index - 1] == '(' ||
+		    str[index - 1] == ')' ||
+		    str[index - 1] == '{' ||
+		    str[index - 1] == '}' ||
+		    index == 0)
+			str[index] -= 32;
+
+		index++;
 	}
-	return (s);
+	return (str);
 }
