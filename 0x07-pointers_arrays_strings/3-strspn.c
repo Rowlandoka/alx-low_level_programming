@@ -2,28 +2,25 @@
 
 /**
 * _strspn - gets the length of a prefix substring
-*@s: the string to be scanned
-*@accept: character to match
-*Return: return char value
+*@s: string to check
+*@accept: string to check against
+*
+* Return: number of bytes of s in accept
 */
+
 unsigned int _strspn(char *s, char *accept)
 {
-	int i;
-	int j;
-	unsigned int result = 0;
+	unsigned int i, j;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; s[i]; i++)
 	{
-		for (j = 0; accept[j] != '\0'; j++)
+		for (j = 0; accept[j]; j++)
 		{
 			if (s[i] == accept[j])
-			{
-				result++;
 				break;
-			}
 		}
-		if (s[i] == '\0')
-			return (result);
+		if (!accept[j])
+			break;
 	}
-	return (result);
+	return (i);
 }
