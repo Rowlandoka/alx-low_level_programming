@@ -2,34 +2,64 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-*_strdup - function that returns a pointer to a new string
-*@str: the duplicate string to be return
-*
-*Return: pointer to duplicate string
+*_strlen - count array
+*@s:array of elements
+*Return: 1
 */
+int _strlen(char *s)
+{
+	unsigned int i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
+/**
+*_strcpy - copy arrays
+*@src: array of element
+*@dest: dest array
+*Return: dest
+*/
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0;
+
+	while (str[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+/**
+*_strdup - array to prints
+*@str: array of elements
+*Return: pointer
+*/
+
 char *_strdup(char *str)
 {
-	char *newstr = NULL;
-	unsigned int i;
-	int n;
+	char *dst;
+	unsigned int size;
 
-	if (str == NULL)
-		return (NULL);
-
-	for (n = 0; str[n] != '\0'; n++)
-
-	newstr = (char *)malloc(n + 1 * sizeof(char));
-
-	if (newstr != NULL)
-	{
-		for (i = 0; str[i] != '\0'; i++)
-			newstr[i] = str[i];
-	}
-	else
+	if (str == 0)
 	{
 		return (NULL);
 	}
-	newstr[i] = '\0';
-	return (newstr);
+	size = _strlen(str) + 1;
+
+	dst = (char *) malloc(size * sizeof(char));
+	if (dst == 0)
+	{
+		return (NULL);
+	}
+	_strcpy(dst, str);
+	return (dst);
 }
 
