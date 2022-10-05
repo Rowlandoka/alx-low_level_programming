@@ -4,9 +4,9 @@
 
 /**
  * argstostr - concatenate all the arguments
- * @ac: int input
- * @a: double pointer array
- * Return: 0
+ * @ac: count of args passed to the function
+ * @av: array of arguments
+ * Return: pointer to the new string
  */
 
 char *argstostr(int ac, char **a)
