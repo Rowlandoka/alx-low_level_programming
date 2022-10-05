@@ -10,49 +10,48 @@
 
 int len(char *str)
 {
-    int len = 0;
-    if (str != NULL)
-    {
-        while (str[len])
-            len++;
-    }
-    return (len);
+int len = 0;
+if (str != NULL)
+{
+while (str[len])
+len++;
+}
+return (len);
 }
 
 /**
  * argstostr - function that concatenate all the arguments
- * @ac: count of args passed to the function
- * @av: array of arguments
- * 
+ * @a: count of args passed to the function
+ * @ac: array of arguments
  * Return: pointer to the new string
  */
 
 char *argstostr(int ac, char **a)
 {
-    char *new_string = NULL;
-    int k = 0, i = ac, j, sum = 0, temp = 0;
+char *new_string = NULL;
+int k = 0, i = ac, j, sum = 0, temp = 0;
 
-    if (ac == 0 || av == NULL)
-        return (NULL);
+if (ac == 0 || a == NULL)
+return (NULL);
+while (ac--)
+sum += (len(av[ac]) + 1);
+new_string = (char *)malloc(sum + 1);
 
-    while (acc--)
-        sum += (len(av[ac]) + 1);
-    new_string = (char *)malloc(sum + 1);
-
-    if (new_string != NULL)
-    {
-        while (k < i)
-        {
-            for (j = 0; av[k][j] != '\0'; j++)
-                new_string[j + temp] = av[k][j];
-            new_string[temp + j] = '\n';
-            temp += (j + 1);
-            k++;
-        }
-        new_string[temp] = '\0';
-    }
-    else{
-        return (NULL);
-    }
-    return (new_string);
+if (new_string != NULL)
+{
+while (k < i)
+{
+for (j = 0; av[k][j] != '\0'; j++)
+new_string[j + temp] = av[k][j];
+new_string[temp + j] = '\n';
+temp += (j + 1);
+k++;
+}
+new_string[temp] = '\0';
+}
+else
+{
+return (NULL);
+}
+return (new_string);
 }
