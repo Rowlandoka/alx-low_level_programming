@@ -1,5 +1,7 @@
+#include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "variadic_functions.h"
-
 /**
  * print_c - prints char
  * @a: list to give
@@ -52,13 +54,13 @@ int print_s(va_list a)
  * print_all - prints all
  * @format: format string that says arg types
  *
- * Return: no return
  */
 void print_all(const char * const format, ...)
 {
 	int i, j;
 	char *sep = "";
 	char *sep2 = ", ";
+	
 	va_list anyArgs;
 	printer ops[] = {
 		{"c", print_c},
