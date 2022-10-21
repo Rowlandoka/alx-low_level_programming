@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#include <stdio.h>
 /**
  * print_list - prints the elements of a list_t list
  *@h:pointer to the start of the list
