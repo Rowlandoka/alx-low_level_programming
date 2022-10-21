@@ -1,21 +1,22 @@
 #include "lists.h"
+
 /**
- * print_list - prints the elements of a list
- *@h:elements to prints
- *Return: number of nodes
+ * print_list - prints the elements of a list_t list
+ *@h:pointer to the start of the list
+ *
+ *Return: number of node in the list
  */
 
 size_t print_list(const list_t *h)
 {
 const list_t *temp;
-unsigned int i = 0;
+unsigned int i;
 
 temp = h;
-while (temp != NULL)
+for (i = 0; temp; i++)
 {
 printf("[%u] %s\n", temp->len, temp->str);
 temp = temp->next;
-i++;
 }
 return (i);
 }
