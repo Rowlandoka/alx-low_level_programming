@@ -25,5 +25,5 @@ tmp = tmp->next;
 }
 tmp->next = newNode;
 }
-return (newNode);
+return (*head);
 }
