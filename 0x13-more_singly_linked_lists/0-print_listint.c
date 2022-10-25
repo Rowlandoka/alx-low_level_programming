@@ -4,17 +4,17 @@
 /**
  *print_listint - function to print element of node
  *@h: pointer to the head node
- *Return: number of element in the node
+ *Return: size_t value
  */
 
 size_t print_listint(const listint_t *h)
 {
-int i = 0;
+size_t i = 0;
 while (h != NULL)
 {
 printf(" %d\n", h->n);
-h = h->next;
 i++;
+h = h->next;
 }
 return (i);
 }
