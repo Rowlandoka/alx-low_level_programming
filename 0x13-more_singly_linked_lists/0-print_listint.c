@@ -1,20 +1,20 @@
 #include "lists.h"
-#include <stdio.h>
 
 /**
- *print_listint - function to print element of node
- *@h: pointer to the head node
- *Return: size_t value
+ * print_listint - prints integers in list
+ * @h: struct listint_t type
+ * Return: size_t value
  */
 
 size_t print_listint(const listint_t *h)
 {
-size_t i = 0;
+size_t count = 0;
+
 while (h != NULL)
 {
 printf(" %d\n", h->n);
-i++;
+count++;
 h = h->next;
 }
-return (i);
+return (count);
 }
