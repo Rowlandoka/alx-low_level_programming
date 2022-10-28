@@ -1,22 +1,24 @@
 #include "main.h"
+
 /**
- * flip_bits - Entry Point
- * @n: input
- * @m: bits
- * Return: 0
+ * flip_bits - flip bits to convert one number to another number
+ * @n: first number
+ * @m: second number to convert to
+ * Return: number of bits that was needed to flip
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int count = 0;
+	unsigned long int diff;
+	int counter;
 
-	while (n != 0 || m != 0)
+	diff = n ^ m;
+	counter = 0;
+
+	while (diff)
 	{
-		if ((n & 1) != (m & 1))
-			count++;
-		m = m >> 1;
-		n = n >> 1;
+		counter++;
+		diff &= (diff - 1);
 	}
 
-	return (count);
-
+	return (counter);
 }
