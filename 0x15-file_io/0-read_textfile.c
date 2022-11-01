@@ -2,7 +2,6 @@
 
 /**
  * read_textfile - read a textfile and prints
- *
  * @filename: name of file to be printed
  * @letters: number of letters to read and print
  * Return: number of letters
