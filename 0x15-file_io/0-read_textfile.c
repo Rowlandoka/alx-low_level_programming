@@ -14,7 +14,7 @@ char *buff;
 
 if (filename == NULL)
 return (0);
-buff = malloc(sizeof(char) * letters);
+buff = malloc(sizeof(char) * letters + 1);
 if (buff == NULL)
 return (0);
 fn = open(filename, O_RDONLY);
@@ -26,6 +26,8 @@ if (fn == -1 || readtext == -1 || wrt == -1 || wrt != readtext)
 free(buff);
 return (0);
 }
+buff[letters] = '\0';
+
 free(buff);
 close(fn);
 
