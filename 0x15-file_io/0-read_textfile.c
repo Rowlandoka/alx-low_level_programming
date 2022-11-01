@@ -24,6 +24,7 @@ wrt = write(STDOUT_FILENO, buff, readtext);
 
 if (fn == -1 || readtext == -1 || wrt == -1 || wrt != readtext)
 {
+free(buff);
 return (0);
 }
 free(buff);
