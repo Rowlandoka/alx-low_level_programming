@@ -45,7 +45,7 @@ int actual_search(int *array, size_t l, size_t h, int value)
 	return (-1);
 }
 /**
- * binary_search - searches binarily
+ * binary_search - searches binary
  * @array: array to go through
  * @size: size of array
  * @value: value of array
